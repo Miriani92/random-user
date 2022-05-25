@@ -34,8 +34,8 @@ function App() {
   };
 
   return (
-    <article>
-      <div>
+    <article className="app">
+      <div className="cardWrapper">
         <div>
           <img src={image ? image : defaultImage} />
         </div>
