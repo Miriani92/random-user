@@ -29,12 +29,11 @@ export const useFetch = () => {
             image,
             passWord,
           };
-          setLoading(false);
           setUser(newUser);
+          setLoading(false);
         }
       } else {
         setLoading(false);
-
         throw new Error("response status popblem");
       }
     } catch (error) {

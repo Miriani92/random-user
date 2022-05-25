@@ -20,6 +20,9 @@ function App() {
   useEffect(() => {
     getData(url);
   }, []);
+  if (loading) {
+    return <Loading />;
+  }
   const { age, email, image, name, passWord, phone, street } = user;
 
   const randomGen = (e) => {
@@ -32,46 +35,38 @@ function App() {
 
   return (
     <article>
-      {loading ? (
-        <Loading />
-      ) : (
+      <div>
         <div>
-          <div>
-            <img src={image ? image : defaultImage} />
-          </div>
-          <p>my{info}is</p>
-          <p>{value}</p>
-          <div>
-            <button data-label="email" className="icon" onMouseOver={randomGen}>
-              <FaEnvelopeOpen />
-            </button>
-            <button data-label="user" className="icon" onMouseOver={randomGen}>
-              <FaUser />
-            </button>
-            <button data-label="age" className="icon" onMouseOver={randomGen}>
-              <FaCalendarTimes />
-            </button>
-            <button
-              data-label="street"
-              className="icon"
-              onMouseOver={randomGen}
-            >
-              <FaMap />
-            </button>
-            <button data-label="phone" className="icon" onMouseOver={randomGen}>
-              <FaPhone />
-            </button>
-            <button
-              data-label="passWord"
-              className="icon"
-              onMouseOver={randomGen}
-            >
-              <FaLock />
-            </button>
-          </div>
-          <button onClick={() => getData(url)}>random</button>
+          <img src={image ? image : defaultImage} />
         </div>
-      )}
+        <p>my{info}is</p>
+        <p>{value}</p>
+        <div>
+          <button data-label="email" className="icon" onMouseOver={randomGen}>
+            <FaEnvelopeOpen />
+          </button>
+          <button data-label="user" className="icon" onMouseOver={randomGen}>
+            <FaUser />
+          </button>
+          <button data-label="age" className="icon" onMouseOver={randomGen}>
+            <FaCalendarTimes />
+          </button>
+          <button data-label="street" className="icon" onMouseOver={randomGen}>
+            <FaMap />
+          </button>
+          <button data-label="phone" className="icon" onMouseOver={randomGen}>
+            <FaPhone />
+          </button>
+          <button
+            data-label="passWord"
+            className="icon"
+            onMouseOver={randomGen}
+          >
+            <FaLock />
+          </button>
+        </div>
+        <button onClick={() => getData(url)}>random</button>
+      </div>
     </article>
   );
 }
