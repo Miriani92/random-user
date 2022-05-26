@@ -23,7 +23,7 @@ function App() {
   if (loading) {
     return <Loading />;
   }
-  const { age, email, image, name, passWord, phone, street } = user;
+  const { image } = user;
 
   const randomGen = (e) => {
     if (e.target.classList.contains("icon")) {
@@ -39,13 +39,13 @@ function App() {
         <div>
           <img src={image ? image : defaultImage} />
         </div>
-        <p>my{info}is</p>
+        <p>my {info} is</p>
         <p>{value}</p>
-        <div>
+        <div className="buttonWrapper">
           <button data-label="email" className="icon" onMouseOver={randomGen}>
             <FaEnvelopeOpen />
           </button>
-          <button data-label="user" className="icon" onMouseOver={randomGen}>
+          <button data-label="name" className="icon" onMouseOver={randomGen}>
             <FaUser />
           </button>
           <button data-label="age" className="icon" onMouseOver={randomGen}>
@@ -65,7 +65,9 @@ function App() {
             <FaLock />
           </button>
         </div>
-        <button onClick={() => getData(url)}>random</button>
+        <button className="btn" onClick={() => getData(url)}>
+          random
+        </button>
       </div>
     </article>
   );

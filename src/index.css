@@ -23,6 +23,13 @@ body {
   height: 500px;
   border-radius: 20px;
   background-color: rgb(87, 86, 143);
+  text-transform: capitalize;
+  color: white;
+}
+.cardWrapper > p {
+  margin-top: 30px;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 .loading {
   position: fixed;
@@ -30,4 +37,38 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 10rem;
+}
+.buttonWrapper {
+  padding: 30px;
+}
+img {
+  margin-top: 50px;
+  border-radius: 50%;
+}
+
+.buttonWrapper > button {
+  padding: 10px;
+  border: transparent;
+  color: aqua;
+  font-size: 2.5rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+.buttonWrapper > button :hover {
+  color: rgb(18, 196, 196);
+}
+.btn {
+  border: transparent;
+  width: 200px;
+  height: 40px;
+  background-color: rgb(89, 204, 89);
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.btn:hover {
+  background-color: rgb(56, 185, 56);
 }
